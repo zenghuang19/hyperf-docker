@@ -41,7 +41,7 @@ RUN set -ex \
     && ( \
         cd swoole \
         && phpize \
-        && ./configure --enable-openssl --enable-http2 --enable-swoole-curl --enable-swoole-json \
+        && ./configure --enable-openssl --enable-http2 --enable-swoole-curl --enable-swoole-json --enable-coroutine-postgresql \
         && make -s -j$(nproc) && make install \
     ) \
     && echo "memory_limit=1G" > /etc/php8/conf.d/00_default.ini \
